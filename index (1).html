@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Voice Stress Detector</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎤 Voice Stress Detector</h1>
+            <p>Real-time voice analysis with 79% accuracy using machine learning</p>
+        </header>
+
+        <main>
+            <div class="control-panel">
+                <button id="startBtn" class="btn btn-primary">Start Detection</button>
+                <button id="stopBtn" class="btn btn-secondary" disabled>Stop Detection</button>
+                <div class="status-indicator">
+                    <span id="statusText">Ready to analyze</span>
+                    <div id="recordingIndicator" class="recording-dot"></div>
+                </div>
+            </div>
+
+            <div class="results-grid">
+                <div class="card">
+                    <h3>Stress Level</h3>
+                    <div class="stress-gauge">
+                        <div id="stressGauge" class="gauge">
+                            <div class="gauge-fill"></div>
+                            <span id="stressValue">0%</span>
+                        </div>
+                    </div>
+                    <div id="stressLabel" class="stress-label">Normal</div>
+                </div>
+
+                <div class="card">
+                    <h3>Prediction Confidence</h3>
+                    <div class="confidence-bars">
+                        <div class="confidence-bar">
+                            <label>Normal</label>
+                            <div class="bar">
+                                <div id="normalBar" class="bar-fill normal"></div>
+                            </div>
+                            <span id="normalProb">50%</span>
+                        </div>
+                        <div class="confidence-bar">
+                            <label>Stressed</label>
+                            <div class="bar">
+                                <div id="stressedBar" class="bar-fill stressed"></div>
+                            </div>
+                            <span id="stressedProb">50%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Audio Features</h3>
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <label>Pitch (Hz)</label>
+                            <span id="pitchValue">---</span>
+                        </div>
+                        <div class="feature-item">
+                            <label>Intensity</label>
+                            <span id="intensityValue">---</span>
+                        </div>
+                        <div class="feature-item">
+                            <label>Zero Crossings</label>
+                            <span id="zcrValue">---</span>
+                        </div>
+                        <div class="feature-item">
+                            <label>Spectral Centroid</label>
+                            <span id="centroidValue">---</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card full-width">
+                    <h3>Live Waveform</h3>
+                    <canvas id="waveformCanvas" width="600" height="200"></canvas>
+                </div>
+            </div>
+
+            <div class="info-panel">
+                <h3>How it works</h3>
+                <ul>
+                    <li>Captures audio from your microphone in real-time</li>
+                    <li>Extracts 18 audio features including MFCC coefficients</li>
+                    <li>Uses trained logistic regression model for classification</li>
+                    <li>All processing happens locally - no data leaves your browser</li>
+                </ul>
+            </div>
+        </main>
+
+        <footer>
+            <p>Accuracy: 79% | Privacy-First | Local Processing Only</p>
+        </footer>
+    </div>
+
+    <script src="js/audioProcessor.js"></script>
+    <script src="js/mlModel.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
