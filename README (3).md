@@ -209,19 +209,9 @@ Research shows that stress affects voice characteristics in measurable ways:
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - Web Audio API documentation and community
 - Speech emotion recognition research community
 - Open source machine learning libraries
 - Browser developers for Web Audio API implementation
-
-## 📞 Support
-
-- **Issues**: Report bugs via GitHub Issues
-- **Questions**: Use GitHub Discussions
-- **Feature Requests**: Submit via GitHub Issues with enhancement label
-
----
-
-**Built with ❤️ for voice analysis and machine learning research**
